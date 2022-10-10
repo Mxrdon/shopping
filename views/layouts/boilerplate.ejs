@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppex</title>
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/web.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+</head>
+<body class=" d-flex flex-column vh-100">
+    <%-include('../partials/nav')%>    
+        
+        <main class=" mt-5  overflow-auto">
+          <%-body%>
+          
+        </main>
+   
+       
+         <%-include('../partials/foot')%>   
+        
+
+
+>
+   
+
+</body>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+   <script>
+    (function () {
+       'use strict'
+    
+       const forms= document.querySelectorAll('.validatedform')
+    
+       Array.from(forms)
+       .forEach(function(form){
+          form.addEventListener('submit',function(event){
+             if(!form.checkValidity()){                                 //validation for forms
+                event.preventDefault()
+                event.stopPropagation()
+             }
+           form.classList.add('was-validated')
+          },false)
+       })
+    })()
+
+
+
+   
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+         autoplay:true,
+         autoplayhoverpause:true,
+         autoplaytimeout:100,
+         items:4,
+         loop:true,
+         nav:true,
+         responsive:{
+           
+            485:{
+               items:1,
+            },
+            728:{
+               items:2,
+            },
+            960:{
+               items:3,
+            },
+            1200:{
+              items:4,
+            }
+         }
+        });
+    })
+
+
+    </script>
+   
+</html>
